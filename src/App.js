@@ -15,26 +15,30 @@ class App extends React.Component {
     }
 
     removePost(i) {
-        const newArr = this.state.postsArr.map(item => {
-            const obj = item;
-            if (item.id > i) {
-                obj.id--;
+        this.state.postsArr.map(post => {
+            if (post.id > i) {
+                post.id--;
             }
-            return obj
+            return post
         });
-        newArr.splice(i, 1);
-        this.setState({ postsArr: newArr })
+        this.state.postsArr.splice(i, 1);
+        this.setState({postsArr: this.state.postsArr})
+    }
+
+    createPost() {
+
     }
 
   render() {
     console.log(this.state);
     return(
-        <div className="container">
-            <div className="buttons">
-                {/*<button className = "buttonAdd">Add post</button>*/}
+        <>
+            <form onSubmit={this.createPost} className="buttons">
+                <input type="text"/>
+                <button type="submit" className = "buttonAdd">Add post</button>
                 {/*<button className = "buttonDelete">Delete list</button>*/}
                 {/*<button className = "buttonChange">Change post</button>*/}
-            </div>
+            </form>
             <ul>
                 {this.state.postsArr.map((post, i) =>
                     <li key={i}>
@@ -45,7 +49,7 @@ class App extends React.Component {
                     </li>
                 )}
             </ul>
-        </div>
+        </>
     )
   }
 }
