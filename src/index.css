@@ -11,3 +11,77 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1 {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+
+
+.nav {
+  padding-top: 20px;
+  text-decoration: none;
+  display: flex;
+  justify-content:space-evenly;
+}
+.nav-link {
+  font-size: 26px;
+  /*font-weight: bold;*/
+  color: rgb(0,0,0);
+  text-decoration: none;
+}
+.nav li:last-child {
+  margin-right: 59%;
+}
+
+
+
+.languages-list{
+  display: flex;
+  justify-content: space-around;
+}
+.languages-list-item {
+  font-size: 20px;
+}
+.languages-list-item:last-child {
+  margin-right:30%;
+}
+.languages-list-item:first-child {
+  margin-left: 10%;
+}
+
+
+.popular-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.popular-item {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  align-items: flex-start;
+  /*align-content: center;*/
+}
+.popular-rank {
+  font-size: 26px;
+  color: darkviolet;
+  margin-right: 120px;
+}
+.space-list-items {
+  margin-bottom: 50px;
+}
+.avatar {
+  max-width: 150px;
+  border-radius: 50%;
+}
+
+
+.active{
+  font-weight: bold;
+  color: rgb(255, 165, 0);
+}
