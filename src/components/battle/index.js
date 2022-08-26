@@ -63,7 +63,10 @@ export default class Battle extends React.Component {
                     <Link
                         className = "battle-button"
                         to = {{
+                                // здесь он тоже не видит пропс, соответстввенно офк в Result прийдет undef и если делать "/battle/results",
+                                // а не this.props.match.url, то все ок. И чесн я пожалуй уже без понятия как это пофиксить
                             pathname: "/battle/results",
+                            //pathname: this.props.match.url + "/results",
                             search: `?playerOneName=${this.state.playerOneName}&playerTwoName=${this.state.playerTwoName}`
                         }}
                     >

@@ -1,5 +1,5 @@
 import React from "react";
-import {Link,useLocation} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 class Result extends React.Component {
     constructor() {
@@ -13,11 +13,13 @@ class Result extends React.Component {
     }
 
     componentDidMount() {
+        //  Сюда он не доходит из Battl`a
+
         console.log(this.props)
 
-         // const searchParams = new URLSearchParams(this.props.location.search);
-        // console.log(searchParams.get("playerOneName"));
-        // console.log(searchParams.get("playerTwoName"));
+        const searchParams = new URLSearchParams(this.props.location.search);
+        console.log(searchParams.get("playerOneName"));
+        console.log(searchParams.get("playerTwoName"));
     }
 
     render() {
