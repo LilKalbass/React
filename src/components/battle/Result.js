@@ -17,9 +17,9 @@ class Result extends React.Component {
 
         console.log(this.props)
 
-        const searchParams = new URLSearchParams(this.props.location.search);
-        console.log(searchParams.get("playerOneName"));
-        console.log(searchParams.get("playerTwoName"));
+        // const searchParams = new URLSearchParams(this.props.location.search);
+        // console.log(searchParams.get("playerOneName"));
+        // console.log(searchParams.get("playerTwoName"));
     }
 
     render() {
