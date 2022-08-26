@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState} from "react";
 
 const PlayerInput = (props) => {
     const [username, setUsername] = useState("");

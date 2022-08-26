@@ -1,5 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {Fight} from "../../utils/api";
+import {Player} from "./Player";
 
 class Result extends React.Component {
     constructor() {
@@ -13,16 +15,19 @@ class Result extends React.Component {
     }
 
     componentDidMount() {
-        //  Сюда он не доходит из Battl`a
-
-        console.log(this.props)
-
-        // const searchParams = new URLSearchParams(this.props.location.search);
-        // console.log(searchParams.get("playerOneName"));
-        // console.log(searchParams.get("playerTwoName"));
+        this.setState({loading: true});
+        const searchParams = new URLSearchParams(window.location.search);
+        Fight([
+            searchParams.get("playerOneName"),
+            searchParams.get("playerTwoName")
+        ])
+            .then(([winner, loser]) => {
+                this.setState({winner, loser, loading: false})
+            })
     }
 
     render() {
+        console.log(this.state)
         if(this.state.loading) {
             return <p>Loading...</p>
         }
@@ -35,7 +40,18 @@ class Result extends React.Component {
         }
 
         return(
-            <h1>Results</h1>
+            <div className = "row">
+                <Player
+                    label = "Winner"
+                    score = {this.state.winner?.score}
+                    profile = {this.state.winner?.profile}
+                />
+                <Player
+                    label = "Loser"
+                    score = {this.state.loser?.score}
+                    profile = {this.state.loser?.profile}
+                />
+            </div>
         )
     }
 }
