@@ -27,7 +27,7 @@ class Result extends React.Component {
     }
 
     render() {
-        console.log(this.state)
+        // console.log(this.state)
         if(this.state.loading) {
             return <p>Loading...</p>
         }
